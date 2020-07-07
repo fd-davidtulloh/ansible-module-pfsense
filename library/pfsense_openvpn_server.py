@@ -355,7 +355,7 @@ def run_module():
     module_args = dict(
         state=dict(required=False, default='present', choices=['present', 'absent', 'disabled']),
         mode=dict(required=True, choices=['p2p_tls', 'p2p_shared_key', 'server_tls', 'server_user', 'server_tls_user']),
-        protocol=dict(required=False, default='UDP', choices=['UDP4', 'UDP6', 'TCP4', 'TCP6', 'UDP', 'TCP']),
+        protocol=dict(required=False, default='UDP4', choices=['UDP4', 'UDP6', 'TCP4', 'TCP6', 'UDP', 'TCP']),
         dev_mode=dict(required=False, default='tun', choices=['tun', 'tap']),
         shared_key=dict(required=True), # required because we only support shared key
         descr=dict(required=True),  # Used as unique identifier
