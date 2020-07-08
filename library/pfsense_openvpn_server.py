@@ -388,7 +388,7 @@ def run_module():
 
     # get config and find our entry
     cfg = read_config(module,'openvpn')
-    index = search(cfg['openvpn-server'],'description',params['descr'])
+    index = search(cfg.get('openvpn-server'),'description',params['descr'])
 
     base = "$config['openvpn']['openvpn-server'][" + str(index) + "]"
 

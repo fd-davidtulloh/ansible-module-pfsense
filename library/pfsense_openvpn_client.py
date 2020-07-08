@@ -261,7 +261,7 @@ def run_module():
     # get config and find our entry
     descr = params['descr'] or 'Ansible generated {}'.format(params['server_addr'])
     cfg = read_config(module,'openvpn')
-    index = search(cfg['openvpn-client'],'description',descr)
+    index = search(cfg.get('openvpn-client'),'description',descr)
     base = "$config['openvpn']['openvpn-client'][" + str(index) + "]"
 
     if params['state'] == 'present':
